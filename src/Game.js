@@ -28,22 +28,23 @@ function gameRound(input) {
     var gameObject = input.split(" ")[1];
     var possibleActions = Object.keys(json[currentState]['actions']);
     if(Util.isInArray(action, possibleActions)) {
-
         var possibleGameObjects = Object.keys(json[currentState]['actions'][action]);
-
         if(Util.isInArray(gameObject, possibleGameObjects)) {
             Util.clearScreen();
             currentState = json[currentState]['actions'][action][gameObject];
         } else {
-            Util.clearScreen();
-            console.log("I can't do that.")
+            invalidCommand();
         }
     } else {
-        Util.clearScreen();
-        console.log("I can't do that.")
+        invalidCommand();
     }
     // Print prompt of next state
     console.log(json[currentState]['prompt']);
+}
+
+function invalidCommand() {
+    Util.clearScreen();
+    console.log("I can't do that.")
 }
 
 function exit() {
