@@ -11,7 +11,7 @@ var currentState = 'q1';
 
 rl.on('line', function(input) {
     Util.clearScreen();
-    gameRound(action, gameObject);
+    gameRound(input);
     rl.prompt();
 }).on('close', function() {
     exit();
