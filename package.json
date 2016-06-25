@@ -1,0 +1,13 @@
+{
+  "name": "node-adventure",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/Game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Breiter",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
