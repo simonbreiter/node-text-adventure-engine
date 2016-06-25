@@ -1,0 +1,18 @@
+{
+    "q1":{
+        "prompt":"You wake up in a dark Room.",
+        "actions": {
+            "inspect": {
+                "room": "q2"
+            },
+            "take": {
+                "shovel": "q3"
+            }
+
+        }
+    },
+    "q2":{
+        "prompt":"The room looks pretty empty. You notice a door.",
+        "actions": {}
+    }
+}
