@@ -8,26 +8,32 @@ parse this JSON file and run your game on the commandline.
 
 To write your adventure, you have to edit game_instructions.json in the src folder. Every state has a
 prompt, which will be prompted wenn this state is active. In each state you 
-can define interactions with objects, which will result in a transition to a new
-state. You can define as many states and many interactions and object as you like.
+can define interactions with objects, which will either result in a transition to a new
+state or a new prompt. It is also possible to combine mutliple objects to create new actions. You can define as many states and many interactions and object as you like.
 
 ```json
 {
-    "q1":{
-        "prompt":"You wake up in a dark Room.",
+    "q0":{
+        "prompt": "You wake up in a bed in a dark room.",
         "actions": {
             "inspect": {
-                "room": "q2"
-            },
-            "take": {
-                "shovel": "q3"
+                "room": {
+                    "prompt": "The room is pretty dark. You notice a door though."
+                },
+            "use": {
+                "door": {
+                    "prompt": "The door is locked. You can't open it. Maybe you can hit it open with something heavy."
+                },
+                "shovel": {
+                    "prompt": "You want to use the shovel, but with what?",
+                    "with": {
+                        "door": {
+                            "nextState": "q2"
+                        }
+                    }
+                }
             }
-
         }
-    },
-    "q2":{
-        "prompt":"The room looks pretty empty. You notice a door.",
-        "actions": {}
     }
 }
 ```
