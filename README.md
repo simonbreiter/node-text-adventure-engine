@@ -11,7 +11,7 @@ node app.js
 
 ## How to write your own adventures
 The idea is to write your adventure as a state machine in YAML. The program will 
-parse this JSON file and run your game on the commandline.
+parse this YAML file and run your game on the commandline.
 
 To write your adventure, you have to edit game_instructions.yml in the src folder. Every state has a
 prompt, which will be prompted wenn this state is active. In each state you 
