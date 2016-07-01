@@ -32,7 +32,6 @@ module.exports = {
     init: function () {
         output.push(game[currentState]['prompt']);
         render();
-        clearOutput();
     },
     loop: function (input) {
         var action = input.split(" ")[0]; // Example action: use
