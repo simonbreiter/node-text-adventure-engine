@@ -2,26 +2,11 @@
 
 var gameLoader = require('./gameLoader');
 var util = require('./util');
+var renderer = require('./renderer');
 var game = gameLoader.loadGame();
 
-var endstate = 'q2';
+var endState = 'q2';
 var currentState = 'q0';
-var output = [];
-
-function clearOutput() {
-    output = [];
-}
-
-function invalidCommand() {
-    util.clearScreen();
-    output.push("You can't do that.")
-}
-
-function render() {
-    util.clearScreen();
-    console.log(output.join("\n"));
-    clearOutput();
-}
 
 function exit() {
     console.log('Goodbye!');
@@ -30,8 +15,8 @@ function exit() {
 
 module.exports = {
     init: function () {
-        output.push(game[currentState]['prompt']);
-        render();
+        renderer.output.push(game[currentState]['prompt']);
+        renderer.render();
     },
     loop: function (input) {
         var action = input.split(" ")[0]; // Example action: use
@@ -52,39 +37,39 @@ module.exports = {
                     if (util.isInArray(gameObject2, possibleGameObjectsToCombine)) {
                         if (game[currentState]['actions'][action][gameObject1]['with'][gameObject2]["nextState"] != undefined) {
                             currentState = game[currentState]['actions'][action][gameObject1]['with'][gameObject2]['nextState'];
-                            output.push(game[currentState]['prompt']);
+                            renderer.output.push(game[currentState]['prompt']);
                         } else if (game[currentState]['actions'][action][gameObject1]['with'][gameObject2]["prompt"] != undefined) {
-                            output.push(game[currentState]['actions'][action][gameObject1]['with'][gameObject2]["prompt"]);
+                            renderer.output.push(game[currentState]['actions'][action][gameObject1]['with'][gameObject2]["prompt"]);
                         } else {
-                            invalidCommand();
+                            renderer.invalidCommand();
                         }
                     } else {
-                        invalidCommand();
+                        renderer.invalidCommand();
                     }
                 }
-                // If a prompt on gameobject exists, push it to output array
+                // If a prompt on gameobject exists, push it to renderer.output array
                 else if (game[currentState]['actions'][action][gameObject1]["prompt"] != undefined) {
-                    output.push(game[currentState]['actions'][action][gameObject1]['prompt']);
+                    renderer.output.push(game[currentState]['actions'][action][gameObject1]['prompt']);
                 }
 
                 // If this gameObject change state, update current state with new state
                 else if (game[currentState]['actions'][action][gameObject1]["nextState"] != undefined) {
                     currentState = game[currentState]['actions'][action][gameObject1]["nextState"];
-                    output.push(game[currentState]['prompt']);
+                    renderer.output.push(game[currentState]['prompt']);
                 }
                 else {
-                    invalidCommand();
+                    renderer.invalidCommand();
                 }
             } else {
-                invalidCommand();
+                renderer.invalidCommand();
             }
         } else {
-            invalidCommand();
+            renderer.invalidCommand();
         }
 
-        // Render output and cleanup array afterwards
-        render();
-        if (currentState === endstate) {
+        // Render renderer.output and cleanup array afterwards
+        renderer.render();
+        if (currentState === endState) {
             exit();
         }
 
