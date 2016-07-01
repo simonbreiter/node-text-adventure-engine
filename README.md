@@ -11,7 +11,7 @@ prompt, which will be prompted wenn this state is active. In each state you
 can define interactions with objects, which will either result in a transition to a new
 state or a new prompt. It is also possible to combine mutliple objects to create new actions. You can define as many states and many interactions and object as you like.
 
-```json
+```yaml
 ---
   q0:
     prompt: "You wake up in a bed in a dark room."
