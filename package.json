@@ -8,6 +8,8 @@
   },
   "author": "Simon Breiter",
   "license": "MIT",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "yamljs": "^0.2.8"
   }
 }

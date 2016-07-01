@@ -1,0 +1,43 @@
+---
+  q0:
+    prompt: "You wake up in a bed in a dark room."
+    actions:
+      inspect:
+        room:
+          prompt: "The room is pretty dark. You notice a door though."
+        bed:
+          prompt: "You notice a shovel under the bed."
+        door:
+          prompt: "A heavy door."
+      take:
+        shovel:
+          nextState: "q1"
+      use:
+        door:
+          prompt: "The door is locked. You can't open it."
+
+  # Player has found shovel
+  q1:
+    prompt: "You take the shovel under the bed. It feels heavy."
+    actions:
+      inspect:
+        room:
+          prompt: "The room is pretty dark. You notice a door though."
+        door:
+          prompt: "A heavy door."
+      use:
+        door:
+          prompt: "The door is locked. You can't open it. Maybe you can hit it open with something heavy."
+        shovel:
+          prompt: "You want to use the shovel, but with what?"
+          with:
+            wall:
+              prompt: "That does nothing on a solid wall. What did you think would happen?"
+            floor:
+              prompt: "Floor is rock solid. Not gonna happen."
+            bed:
+              prompt: "This doesn't make any sense, doesn't it?"
+            door:
+              nextState: "q2"
+  q2:
+    prompt: "You bash the door open and escape the room."

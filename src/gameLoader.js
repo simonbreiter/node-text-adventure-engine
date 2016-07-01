@@ -1,9 +1,9 @@
 "use strict";
 
-var fs = require('fs');
+var yaml = require('yamljs');
 
 module.exports = {
     loadGame: function() {
-        return JSON.parse(fs.readFileSync('./game_instructions.json', 'utf8'));
+        return yaml.load('./game_instructions.yml');
     }
 };
