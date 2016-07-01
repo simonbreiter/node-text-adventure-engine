@@ -11,8 +11,8 @@ rl.on('line', function(input) {
     if(input != "exit") {
         // Play one round with input
         game.loop(input);
-        // Wait for next input
-        rl.prompt();
+        //// Wait for next input
+        //rl.prompt();
     } else {
         exit();
     }
