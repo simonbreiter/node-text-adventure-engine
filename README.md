@@ -2,12 +2,10 @@
 
 A simple engine for text-adventures, based on Node.js and YAML.
 
+
 ## How to play
-If you just just want to play install the dependencies and run app.js
-```bash
-npm install
-node app.js
-```
+If you just just want to play install the dependencies with `npm install` and run the app with `node app.js`
+
 
 ## How to write your own adventures
 The idea is to write your adventure as a state machine in YAML. The program will 
