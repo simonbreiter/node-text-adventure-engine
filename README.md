@@ -20,18 +20,25 @@ state or a new prompt. It is also possible to combine multiple objects to create
 
 ```yaml
 ---
+  # Define as many states as you want
   q0:
+    # Every state has a prompt, which will be prompted when state becomes active
     prompt: "You wake up in a bed in a dark room."
+    # In every state, you can define interactions (verbs) with your environment
     actions:
       inspect:
+        # You can define gameobjects (nouns) to interact with
         room:
-          prompt: "The room is pretty dark. You notice a door though."
-        bed:
-          prompt: "You notice a shovel under the bed."
-        door:
-          prompt: "A heavy door."
+          # Each interactions with a gameobject leads to a new prompt on the same state... 
+          prompt: "The room is pretty dark. You notice a door."
+      take:
+        axe: 
+          # ... or even a new state
+          nextState: "q1"
+      use:
         shovel:
           prompt: "You want to use the shovel, but with what?"
+          # You can even combine gameobjects and create new interactions
           with:
             door:
               nextState: "q2"
