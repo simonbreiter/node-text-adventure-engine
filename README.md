@@ -38,7 +38,7 @@ state or a new prompt. It is also possible to combine multiple objects to create
           prompt: "You want to use the shovel, but with what?"
           # You can even combine gameobjects and create new interactions
           with:
-            door:
+            floor:
               nextState: "q2"
 ```
 
