@@ -5,7 +5,6 @@ var util = require('./util');
 var renderer = require('./renderer');
 var game = gameLoader.loadGame();
 
-var endState = 'q2';
 var currentState = 'q0';
 
 function exit() {
@@ -69,7 +68,7 @@ module.exports = {
 
         // Render renderer.output and cleanup array afterwards
         renderer.render();
-        if (currentState === endState) {
+        if (currentState === "end") {
             exit();
         }
 

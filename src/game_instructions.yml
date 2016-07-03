@@ -38,6 +38,6 @@
             bed:
               prompt: "This doesn't make any sense, doesn't it?"
             door:
-              nextState: "q2"
-  q2:
+              nextState: "end"
+  end:
     prompt: "You bash the door open and escape the room."
