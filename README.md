@@ -9,19 +9,19 @@ the app with `node app.js`
 
 
 ## How to write your own adventures
-The idea is to write your adventure as a state machine in YAML. The program will 
-parse this YAML file and run your game on the commandline.
+The idea is to write your adventure as a deterministic finite state machine in YAML. 
+The program will parse this YAML file and run your game on the commandline.
 
 To write your adventure, you have to edit game_instructions.yml in the src folder. 
 Every state has a prompt, which will be prompted when this state is active. In each 
 state you can define interactions with objects, which will either result in a transition 
 to a new state or a new prompt in the same state. It is also possible to combine multiple 
 objects to create new actions. You can define as many states and many interactions 
-and object as you like.
+and object as you like. If a state should be a valid endstate, name this state "end".
 
 ```yaml
 ---
-  # Define as many states as you want
+  # Define as many states as you want, naming them as you want
   q0:
     # Every state has a prompt, which will be prompted when state becomes active
     prompt: "You wake up in a bed in a dark room."
@@ -42,7 +42,8 @@ and object as you like.
           # You can even combine gameobjects and create new interactions
           with:
             floor:
-              nextState: "q2"
+              # End states will end the game
+              nextState: "end"
 ```
 
 ## Author
