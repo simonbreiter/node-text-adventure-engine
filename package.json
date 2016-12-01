@@ -4,11 +4,15 @@
   "description": "",
   "main": "src/Game.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine",
+    "dev": "onchange 'src/**/*.js' 'spec/**/*.js' -- yarn test"
   },
   "author": "Simon Breiter",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "jasmine": "^2.5.2",
+    "onchange": "^3.0.2"
+  },
   "devDependencies": {
     "yamljs": "^0.2.8"
   }
