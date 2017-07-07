@@ -14,22 +14,23 @@
   "author": "Simon Breiter",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.5.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.8.0",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "jasmine": "^2.6.0",
     "onchange": "^3.0.2",
     "path": "^0.12.7",
     "standard": "^10.0.2",
     "webpack": "^3.0.0",
-    "yamljs": "^0.3.0",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.6.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "yamljs": "^0.3.0"
   }
 }
