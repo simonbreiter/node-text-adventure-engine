@@ -8,8 +8,8 @@
     "webpack:build": "webpack --display-error-details",
     "dev": "onchange 'src/**/*.js' 'spec/**/*.js' -- yarn test",
     "doc:build": "esdoc",
-    "lint": "standard",
-    "lint:fix": "standard --fix"
+    "lint": "standard --env jasmine",
+    "lint:fix": "standard --env jasmine --fix"
   },
   "author": "Simon Breiter",
   "license": "MIT",
