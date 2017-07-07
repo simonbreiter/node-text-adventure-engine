@@ -1,3 +1,12 @@
+stages:
+  - build
+  - test
+
 build:
   script:
+    - npm run webpack:build
+
+test:
+  script:
     - npm run test
+
