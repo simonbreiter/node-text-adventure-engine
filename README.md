@@ -1,5 +1,6 @@
 # node-adventure
-
+[![build status](https://gitlab.com/simonbreiter/node-text-adventure-engine/badges/master/build.svg)](https://gitlab.com/simonbreiter/node-text-adventure-engine/commits/master)
+[![coverage report](https://gitlab.com/simonbreiter/node-text-adventure-engine/badges/master/coverage.svg)](https://gitlab.com/simonbreiter/node-text-adventure-engine/commits/master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A simple engine for text-adventures, based on Node.js and YAML.
