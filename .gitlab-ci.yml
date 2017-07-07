@@ -1,12 +1,12 @@
 stages:
-  - build
   - test
 
-build:
-  script:
-    - npm run webpack:build
-
 test:
+  image: node:8.1.3
   script:
+    - npm install
     - npm run test
+  only:
+    - master
+
 
