@@ -1,26 +1,24 @@
-"use strict";
+import readline from 'readline'
+import game from './game'
 
-var readline = require('readline');
-var game = require('./Game');
+const rl = readline.createInterface(process.stdin, process.stdout)
 
-var rl = readline.createInterface(process.stdin, process.stdout);
+game.init()
 
-game.init();
+rl.on('line', function (input) {
+  if (input !== 'exit') {
+    // Play one round with input
+    game.loop(input)
+    /// / Wait for next input
+    // rl.prompt()
+  } else {
+    exit()
+  }
+}).on('close', function () {
+  exit()
+})
 
-rl.on('line', function(input) {
-    if(input != "exit") {
-        // Play one round with input
-        game.loop(input);
-        //// Wait for next input
-        //rl.prompt();
-    } else {
-        exit();
-    }
-}).on('close', function() {
-    exit();
-});
-
-function exit() {
-    console.log('Goodbye!');
-    process.exit(0);
+function exit () {
+  console.log('Goodbye!')
+  process.exit(0)
 }

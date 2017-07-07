@@ -1,7 +1,8 @@
-# README
+# node-adventure
+
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A simple engine for text-adventures, based on Node.js and YAML.
-
 
 ## How to play
 If you just just want to play install the dependencies with `npm install` and run 

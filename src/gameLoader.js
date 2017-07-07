@@ -1,9 +1,17 @@
-"use strict";
+import yamljs from 'yamljs'
+import path from 'path'
 
-var yaml = require('yamljs');
+/**
+ * @desc Loads game
+ */
 
-module.exports = {
-    loadGame: function() {
-        return yaml.load('./game_instructions.yml');
-    }
-};
+const gameLoader = {
+    /**
+     * @desc Loads game
+     */
+  loadGame () {
+    return yamljs.load(path.join(__dirname, '/../data/game_instructions.yml'))
+  }
+}
+
+export default gameLoader

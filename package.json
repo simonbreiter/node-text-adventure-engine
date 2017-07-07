@@ -2,18 +2,36 @@
   "name": "node-adventure",
   "version": "0.0.1",
   "description": "",
-  "main": "src/Game.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "jasmine",
-    "dev": "onchange 'src/**/*.js' 'spec/**/*.js' -- yarn test"
+    "test": "babel-node spec/run.js",
+    "webpack:build": "webpack --display-error-details",
+    "dev": "onchange 'src/**/*.js' 'spec/**/*.js' -- yarn test",
+    "doc:build": "esdoc",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
   "author": "Simon Breiter",
   "license": "MIT",
   "dependencies": {
-    "jasmine": "^2.5.2",
-    "onchange": "^3.0.2"
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "eslint-loader": "^1.8.0",
+    "jasmine": "^2.6.0",
+    "onchange": "^3.0.2",
+    "path": "^0.12.7",
+    "standard": "^10.0.2",
+    "webpack": "^3.0.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "yamljs": "^0.2.8"
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }
