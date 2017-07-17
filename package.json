@@ -9,7 +9,8 @@
     "dev": "onchange 'src/**/*.js' 'spec/**/*.js' -- yarn test",
     "doc:build": "esdoc",
     "lint": "standard --env jasmine",
-    "lint:fix": "standard --env jasmine --fix"
+    "lint:fix": "standard --env jasmine --fix",
+    "precommit": "npm run lint:fix && npm run test"
   },
   "author": "Simon Breiter",
   "license": "MIT",
@@ -27,6 +28,7 @@
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
     "jasmine": "^2.6.0",
     "jasmine-node": "^1.14.5",
     "onchange": "^3.0.2",
